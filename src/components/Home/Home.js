@@ -10,7 +10,7 @@ class Home extends Component {
 
    render() {
       return (
-         <div className="center">
+         <div className="home-center">
             <button onClick={this.linkToViewFeeling}>Begin Feedback</button>
          </div>
       );
