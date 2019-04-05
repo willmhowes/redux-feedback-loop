@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 class ViewFeeling extends Component {
    render() {
       return (
-         <div className="App">
+         <div>
 
          </div>
       );

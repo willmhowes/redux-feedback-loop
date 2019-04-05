@@ -6,7 +6,7 @@ class ViewUnderstanding extends Component {
    render() {
       console.log('in viewunderstanding');
       return (
-         <div className="App">
+         <div>
             <h1>ViewUnderstanding</h1>
          </div>
       );
