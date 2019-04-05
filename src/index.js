@@ -7,7 +7,22 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import { logger } from 'redux-logger';
 
-const feedbackFormReducer = (state={}, action) => {
+// reducer for storing in-progress form data
+const feedbackFormReducer = (state={
+   feelingRating: null,
+   understandingRating: null,
+   supportRating: null,
+   comment: null,
+}, action) => {
+
+   // handles numeric data updates to reducer state
+   if (action.type === 'UPDATE_NUMERIC_RATING') {
+      return {
+         ...state,
+         // both the property and value are send in the payload
+         [action.payload.propertyName]: action.payload.selectedOption,
+      }
+   }
 
    return state;
 }

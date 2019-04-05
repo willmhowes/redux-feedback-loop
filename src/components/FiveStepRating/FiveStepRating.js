@@ -5,14 +5,25 @@ import './FiveStepRating.css';
 class FiveStepRating extends Component {
 
    state = {
+      // the radio input currently selected
       selectedOption: null,
    }
 
+   // sends an object containing update info to reduxState
    handleSubmit = (event) => {
       event.preventDefault();
+      // creates an object for reduxState containing a property and the value to update it with
+      const objectToSend = {
+         selectedOption: this.state.selectedOption,
+         propertyName: this.props.propertyName,
+      };
 
+      // sends the object to the reduxState to be parsed
+      const action = { type: 'UPDATE_NUMERIC_RATING', payload: objectToSend}
+      this.props.dispatch(action);
    }
 
+   // Saves the current selected radio in state
    handleRadioUpdate = (event) => {
       this.setState({
          selectedOption: event.target.value,
@@ -20,10 +31,8 @@ class FiveStepRating extends Component {
    }
 
    render() {
-      console.log('in viewunderstanding');
       return (
          <form className="fiveStepRating-radioForm" onSubmit={this.handleSubmit}>
-            {JSON.stringify(this.state.selectedOption)}
             <div className="fiveStepRating-radio" onClick={this.handleRadioUpdate}>
                <input type="radio" name="oneToFive" value="1"></input>
                <br />
