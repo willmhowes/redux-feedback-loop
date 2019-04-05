@@ -1,0 +1,15 @@
+.fiveStepRating-radioForm {
+   display: flex;
+   /* flex-wrap: wrap; */
+   justify-content: center;
+}
+
+.fiveStepRating-radio {
+   display: inline-block;
+   text-align: center;
+   margin: 10px;
+}
+
+.fiveStepRating-radio > input{
+   margin: 0px 0px 5px 0px;
+}
