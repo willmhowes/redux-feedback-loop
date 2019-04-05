@@ -1,3 +1,11 @@
-.FeedbackInProgress-section {
+.FeedbackInProgress-table {
    border: 2px black solid;
+   margin: 20px auto;
+   border-collapse: collapse;
+}
+
+.FeedbackInProgress-table th,
+.FeedbackInProgress-table td {
+   border: 2px black solid;
+   padding: 5px;
 }
