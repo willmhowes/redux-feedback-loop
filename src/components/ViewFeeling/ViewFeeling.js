@@ -16,7 +16,7 @@ class ViewFeeling extends Component {
    render() {
       return (
          <div>
-            <h1>How are you feeling today? </h1>
+            <h1>How are you feeling today?</h1>
             <FiveStepRating propertyName={this.state.propertyName} nextView={this.nextView} />
          </div>
       );
