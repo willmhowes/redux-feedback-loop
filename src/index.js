@@ -7,9 +7,14 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import { logger } from 'redux-logger';
 
+const feedbackFormReducer = (state={}, action) => {
+
+   return state;
+}
+
 const storeInstance = createStore(
    combineReducers({
-      // Reducers go here
+      feedbackFormReducer,
    }),
    applyMiddleware(logger),
 )
