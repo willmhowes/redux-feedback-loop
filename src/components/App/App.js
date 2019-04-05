@@ -8,6 +8,7 @@ import ViewFeeling from '../ViewFeeling/ViewFeeling';
 import ViewUnderstanding from '../ViewUnderstanding/ViewUnderstanding';
 import ViewSupport from '../ViewSupport/ViewSupport';
 import ViewComment from '../ViewComment/ViewComment';
+import Home from '../Home/Home';
 
 class App extends Component {
   render() {
@@ -20,6 +21,7 @@ class App extends Component {
           </header>
           <br/>
         </div>
+        <Route exact path="/" component={Home} />
         <Route exact path="/feeling" component={ViewFeeling} />
         <Route exact path="/understanding" component={ViewUnderstanding} />
         <Route exact path="/support" component={ViewSupport} />
