@@ -15,4 +15,4 @@ const mapReduxStateToProps = reduxState => ({
    reduxState
 });
 
-export default ViewComment;
+export default connect(mapReduxStateToProps)(ViewComment);

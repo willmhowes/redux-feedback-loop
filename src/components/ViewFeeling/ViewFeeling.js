@@ -15,4 +15,4 @@ const mapReduxStateToProps = reduxState => ({
    reduxState
 });
 
-export default ViewFeeling;
+export default connect(mapReduxStateToProps)(ViewFeeling);

@@ -15,4 +15,4 @@ const mapReduxStateToProps = reduxState => ({
    reduxState
 });
 
-export default ViewSupport;
+export default connect(mapReduxStateToProps)(ViewSupport);
