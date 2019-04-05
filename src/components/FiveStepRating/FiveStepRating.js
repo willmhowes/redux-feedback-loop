@@ -21,6 +21,8 @@ class FiveStepRating extends Component {
       // sends the object to the reduxState to be parsed
       const action = { type: 'UPDATE_NUMERIC_RATING', payload: objectToSend}
       this.props.dispatch(action);
+      // Components should prop-share a function that links to the next view
+      this.props.nextView();
    }
 
    // Saves the current selected radio in state
