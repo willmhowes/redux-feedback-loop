@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import FiveStepRating from '../FiveStepRating/FiveStepRating';
 
-class ViewFeeling extends Component {
-
-   state = {
-      // name of the property stored in reduxState to be updated
-      propertyName: 'feelingRating',
-   }
+class ViewReview extends Component {
 
    nextView = () => {
       this.props.history.push('/understanding');
@@ -16,11 +11,14 @@ class ViewFeeling extends Component {
    render() {
       return (
          <div>
-            <h1>How are you feeling today?</h1>
-            <FiveStepRating propertyName={this.state.propertyName} nextView={this.nextView} />
+            <h1>Review Feedback</h1>
          </div>
       );
    }
 }
 
-export default withRouter(ViewFeeling);
+const mapReduxStateToProps = reduxState => ({
+   reduxState
+});
+
+export default connect(mapReduxStateToProps)(withRouter(ViewReview));
