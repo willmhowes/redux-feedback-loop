@@ -4,6 +4,15 @@ import { connect } from 'react-redux';
 import './FeedbackInProgress.css';
 
 class FeedbackInProgress extends Component {
+
+    commentRender = () => {
+       if (this.props.reduxState.feedbackFormReducer.comment === '') {
+         return <td>skipped</td>
+       } else {
+          return <td>{this.props.reduxState.feedbackFormReducer.comment}</td>
+       }
+    }
+
    render() {
       return (
          <section>
@@ -29,8 +38,8 @@ class FeedbackInProgress extends Component {
                      <td>{this.props.reduxState.feedbackFormReducer.supportRating}</td>
                   </tr>
                   <tr>
-                     <td>comment</td>
-                     <td>{this.props.reduxState.feedbackFormReducer.comment}</td>
+                     <td>Comment</td>
+                     {this.commentRender()}
                   </tr>
                </tbody>
             </table>

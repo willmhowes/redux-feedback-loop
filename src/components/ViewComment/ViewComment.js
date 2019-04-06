@@ -15,10 +15,26 @@ class ViewComment extends Component {
       });
    }
 
+   nextView = () => {
+      this.props.history.push('/review');
+   }
+
    handleSubmit = (event) => {
       event.preventDefault();
-      const action = { type: 'ADD_COMMENT_FEEDBACK', payload: this.state.comment };
+
+      if(this.state.comment === '') {
+         alert('Please enter a comment, or click the skip button');
+      } else {
+         const action = { type: 'ADD_COMMENT_FEEDBACK', payload: this.state.comment };
+         this.props.dispatch(action);
+         this.nextView();
+      }
+   }
+
+   skipComment = () => {
+      const action = { type: 'ADD_COMMENT_FEEDBACK', payload: '' };
       this.props.dispatch(action);
+      this.nextView();
    }
 
    render() {
@@ -33,7 +49,8 @@ class ViewComment extends Component {
                   value={this.state.comment}>
                </textarea>
                <br />
-               <button>Submit</button>
+               <button type="submit">Submit</button>
+               <button type="button" onClick={this.skipComment}>Skip</button>
             </form>
             <FeedbackInProgress />
          </div>
