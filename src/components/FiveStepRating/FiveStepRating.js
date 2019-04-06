@@ -40,31 +40,33 @@ class FiveStepRating extends Component {
 
    render() {
       return (
-         <form className="fiveStepRating-radioForm" onSubmit={this.handleSubmit}>
-            <div className="fiveStepRating-radio" onClick={this.handleRadioUpdate}>
-               <input type="radio" name="oneToFive" value="1"></input>
-               <br />
-               <label>1</label>
-            </div>
-            <div className="fiveStepRating-radio" onClick={this.handleRadioUpdate}>
-               <input type="radio" name="oneToFive" value="2"></input>
-               <br />
-               <label>2</label>
-            </div>
-            <div className="fiveStepRating-radio" onClick={this.handleRadioUpdate}>
-               <input type="radio" name="oneToFive" value="3"></input>
-               <br />
-               <label>3</label>
-            </div>
-            <div className="fiveStepRating-radio" onClick={this.handleRadioUpdate}>
-               <input type="radio" name="oneToFive" value="4"></input>
-               <br />
-               <label>4</label>
-            </div>
-            <div className="fiveStepRating-radio" onClick={this.handleRadioUpdate}>
-               <input type="radio" name="oneToFive" value="5"></input>
-               <br />
-               <label>5</label>
+         <form onSubmit={this.handleSubmit}>
+            <div className="fiveStepRating-radioForm">
+               <div className="fiveStepRating-radio" onClick={this.handleRadioUpdate}>
+                  <input type="radio" name="oneToFive" value="1"></input>
+                  <br />
+                  <label>1</label>
+               </div>
+               <div className="fiveStepRating-radio" onClick={this.handleRadioUpdate}>
+                  <input type="radio" name="oneToFive" value="2"></input>
+                  <br />
+                  <label>2</label>
+               </div>
+               <div className="fiveStepRating-radio" onClick={this.handleRadioUpdate}>
+                  <input type="radio" name="oneToFive" value="3"></input>
+                  <br />
+                  <label>3</label>
+               </div>
+               <div className="fiveStepRating-radio" onClick={this.handleRadioUpdate}>
+                  <input type="radio" name="oneToFive" value="4"></input>
+                  <br />
+                  <label>4</label>
+               </div>
+               <div className="fiveStepRating-radio" onClick={this.handleRadioUpdate}>
+                  <input type="radio" name="oneToFive" value="5"></input>
+                  <br />
+                  <label>5</label>
+               </div>
             </div>
             <button type="submit">Submit</button>
          </form>
