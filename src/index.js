@@ -22,6 +22,11 @@ const feedbackFormReducer = (state={
          // both the property and value are send in the payload
          [action.payload.propertyName]: action.payload.selectedOption,
       }
+   } else if (action.type === 'ADD_COMMENT_FEEDBACK') {
+      return {
+         ...state,
+         comment: action.payload,
+      }
    }
 
    return state;
