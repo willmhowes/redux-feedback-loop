@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import FiveStepRating from '../FiveStepRating/FiveStepRating';
+import FeedbackInProgress from '../FeedbackInProgress/FeedbackInProgress';
 
 class ViewFeeling extends Component {
 
@@ -18,6 +19,7 @@ class ViewFeeling extends Component {
          <div>
             <h1>How are you feeling today?</h1>
             <FiveStepRating propertyName={this.state.propertyName} nextView={this.nextView} />
+            <FeedbackInProgress />
          </div>
       );
    }

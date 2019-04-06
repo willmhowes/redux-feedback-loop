@@ -9,7 +9,7 @@ import ViewUnderstanding from '../ViewUnderstanding/ViewUnderstanding';
 import ViewSupport from '../ViewSupport/ViewSupport';
 import ViewComment from '../ViewComment/ViewComment';
 import Home from '../Home/Home';
-import FeedbackInProgress from '../FeedbackInProgress/FeedbackInProgress';
+import ViewReview from '../ViewReview/ViewReview';
 
 class App extends Component {
   render() {
@@ -26,7 +26,7 @@ class App extends Component {
           <Route exact path="/understanding" component={ViewUnderstanding} />
           <Route exact path="/support" component={ViewSupport} />
           <Route exact path="/comment" component={ViewComment} />
-          <FeedbackInProgress />
+          <Route exact path="/review" component={ViewReview} />
         </div>
       </Router>
     );

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import FeedbackInProgress from '../FeedbackInProgress/FeedbackInProgress';
 
 class ViewComment extends Component {
 
@@ -34,6 +35,7 @@ class ViewComment extends Component {
                <br />
                <button>Submit</button>
             </form>
+            <FeedbackInProgress />
          </div>
       );
    }
