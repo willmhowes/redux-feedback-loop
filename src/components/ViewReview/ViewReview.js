@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import './ViewReview.css';
+import FeedbackTableComponents from '../FeedbackTableComponents/FeedbackTableComponents';
 
 class ViewReview extends Component {
-
-   nextView = () => {
-      this.props.history.push('/understanding');
-   }
 
    render() {
       return (
          <div>
             <h1>Review Feedback</h1>
-         </div>
+            <table className="ViewReview-table">
+               <FeedbackTableComponents />
+            </table>
+         </div >
       );
    }
 }
