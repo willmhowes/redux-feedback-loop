@@ -10,21 +10,18 @@ import ViewSupport from '../ViewSupport/ViewSupport';
 import ViewComment from '../ViewComment/ViewComment';
 import Home from '../Home/Home';
 import ViewReview from '../ViewReview/ViewReview';
-import Axios from 'axios';
 
 class App extends Component {
 
   submitFeedback = () => {
-    axios({
+    console.log('in submit feedback...');
+    let returnVal = axios({
       method: 'POST',
       url: '/feedback',
       data: this.props.reduxState.feedbackFormReducer,
-    }).then((response) => {
-      console.log('POST response', response);
-    }).catch((error) => {
-      alert('Failed to submit feedback form, try again later');
-      console.log('error:', error);
-    })
+    });
+
+    return returnVal;
   }
 
   render() {
@@ -41,7 +38,11 @@ class App extends Component {
           <Route exact path="/understanding" component={ViewUnderstanding} />
           <Route exact path="/support" component={ViewSupport} />
           <Route exact path="/comment" component={ViewComment} />
-          <Route exact path="/review" component={ViewReview} />
+          <Route
+            exact path="/review"
+            render={(props) => <ViewReview {...props}
+              submitFeedback={this.submitFeedback} />}
+          />
         </div>
       </Router>
     );
