@@ -6,14 +6,6 @@ import FeedbackTableComponents from '../FeedbackTableComponents/FeedbackTableCom
 
 class FeedbackInProgress extends Component {
 
-    commentRender = () => {
-       if (this.props.reduxState.feedbackFormReducer.comment === '') {
-         return <td>skipped</td>
-       } else {
-          return <td>{this.props.reduxState.feedbackFormReducer.comment}</td>
-       }
-    }
-
    render() {
       return (
          <section>
