@@ -10,6 +10,12 @@ class FeedbackInProgress extends Component {
       return (
          <section>
             <table className="FeedbackInProgress-table">
+               <thead>
+                  <tr>
+                     <th>Category</th>
+                     <th>Response</th>
+                  </tr>
+               </thead>
                <FeedbackTableComponents />
             </table>
          </section>

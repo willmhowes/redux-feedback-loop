@@ -13,15 +13,7 @@ class FeedbackInProgress extends Component {
 
    render() {
       return (
-         <div>
-            <thead>
-               <tr>
-                  <th>Category</th>
-                  <th>Response</th>
-               </tr>
-            </thead>
-
-            <tbody>
+         <tbody>
                <tr>
                   <td>Feeling</td>
                   <td>{this.props.reduxState.feedbackFormReducer.feelingRating}</td>
@@ -39,8 +31,6 @@ class FeedbackInProgress extends Component {
                   {this.commentRender()}
                </tr>
             </tbody>
-
-         </div>
       );
    }
 }
