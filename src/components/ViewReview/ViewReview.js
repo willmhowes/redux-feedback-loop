@@ -6,6 +6,10 @@ import FeedbackTableComponents from '../FeedbackTableComponents/FeedbackTableCom
 
 class ViewReview extends Component {
 
+   handleSubmit = () => {
+      
+   }
+
    render() {
       return (
          <div>
@@ -13,6 +17,7 @@ class ViewReview extends Component {
             <table className="ViewReview-table">
                <FeedbackTableComponents />
             </table>
+            <button onClick={this.handleSubmit}>Submit</button>
          </div >
       );
    }
