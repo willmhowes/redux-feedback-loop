@@ -10,15 +10,25 @@ import ViewSupport from '../ViewSupport/ViewSupport';
 import ViewComment from '../ViewComment/ViewComment';
 import Home from '../Home/Home';
 import ViewReview from '../ViewReview/ViewReview';
+import ViewAdmin from '../ViewAdmin/ViewAdmin';
 
 class App extends Component {
 
   // sends feedback to server and returns the resul
   submitFeedback = () => {
-    let returnVal = axios({
+    const returnVal = axios({
       method: 'POST',
       url: '/feedback',
       data: this.props.reduxState.feedbackFormReducer,
+    });
+
+    return returnVal;
+  }
+
+  getAllFeedback = () => {
+    const returnVal = axios({
+      type: 'GET',
+      url: '/admin',
     });
 
     return returnVal;
@@ -42,6 +52,11 @@ class App extends Component {
             exact path="/review"
             render={(props) => <ViewReview {...props}
               submitFeedback={this.submitFeedback} />}
+          />
+          <Route
+            exact path="/admin"
+            render={(props) => <ViewAdmin {...props}
+              getAllFeedback={this.getAllFeedback} />}
           />
         </div>
       </Router>
