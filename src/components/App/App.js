@@ -13,8 +13,8 @@ import ViewReview from '../ViewReview/ViewReview';
 
 class App extends Component {
 
+  // sends feedback to server and returns the resul
   submitFeedback = () => {
-    console.log('in submit feedback...');
     let returnVal = axios({
       method: 'POST',
       url: '/feedback',

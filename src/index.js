@@ -21,12 +21,19 @@ const feedbackFormReducer = (state={
          ...state,
          // both the property and value are send in the payload
          [action.payload.propertyName]: action.payload.selectedOption,
-      }
+      };
    } else if (action.type === 'ADD_COMMENT_FEEDBACK') {
       return {
          ...state,
          comment: action.payload,
-      }
+      };
+   } else if (action.type === 'RESET_FEEDBACK') {
+      return {
+         feelingRating: null,
+         understandingRating: null,
+         supportRating: null,
+         comment: null,
+      };
    }
 
    return state;
