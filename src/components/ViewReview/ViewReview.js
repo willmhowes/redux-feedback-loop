@@ -28,8 +28,10 @@ class ViewReview extends Component {
       });
    }
 
+   // Renders either:
+   // 1) a preview of submission contents
+   // 2) an indication of a successful submission
    handleView = () => {
-
       if (this.state.is_submitted === true) {
          return (
             <div>
@@ -54,7 +56,6 @@ class ViewReview extends Component {
             </div>
          )
       }
-
    }
 
    render() {

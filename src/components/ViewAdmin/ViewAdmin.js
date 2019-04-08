@@ -9,6 +9,8 @@ class ViewAdmin extends Component {
       feedbackArray: [],
    }
 
+   // Refresh the list of feedback entries
+   // If desired, could be attached to a button for manual refreshing
    refreshAllFeedback = () => {
       this.props.getAllFeedback()
          .then((response) => {
@@ -21,6 +23,7 @@ class ViewAdmin extends Component {
          });
    }
 
+   // GET request returns updated feedback list
    componentDidMount = () => {
       this.refreshAllFeedback();
    }

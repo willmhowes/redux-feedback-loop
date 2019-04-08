@@ -25,6 +25,7 @@ class ViewAdmin extends Component {
       });
    }
 
+   // Formats the date from the database into a human-readable string
    formatDate = () => {
       let date = new Date(this.props.item.date);
       // console.log(date);
