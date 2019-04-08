@@ -1,0 +1,10 @@
+.ViewAdmin-table {
+   margin: 20px auto;
+   border-collapse: collapse;
+}
+
+.ViewAdmin-table th,
+.ViewAdmin-table td {
+   border: 2px black solid;
+   padding: 5px;
+}

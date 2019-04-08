@@ -10,16 +10,10 @@ class ViewReview extends Component {
       is_submitted: false,
    }
 
-   handleSubmit = async () => {
+   handleSubmit = () => {
       // activate submission function, save response in variable
-      let response = await this.props.submitFeedback()
-      .catch((error) => {
-         alert('error adding feedback, please try again later');
-         console.log('error:', error);
-      });
-
-      // Checks if submission was successful
-      if (response.status === 201) {
+      this.props.submitFeedback()
+      .then(() => {
          // Updates DOM to show successful submission
          this.setState({
             is_submitted: true,
@@ -27,11 +21,11 @@ class ViewReview extends Component {
          // resets the feedbackFormReducer in reduxState
          let action = { type: 'RESET_FEEDBACK' };
          this.props.dispatch(action);
-      } else {
+      })
+      .catch((error) => {
          alert('error adding feedback, please try again later');
-         console.log('error:', response);
-      }
-
+         console.log('error:', error);
+      });
    }
 
    handleView = () => {
