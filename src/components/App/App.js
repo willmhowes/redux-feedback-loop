@@ -25,6 +25,7 @@ class App extends Component {
     return returnVal;
   }
 
+  // retrieves a list of all feedback entries in database
   getAllFeedback = () => {
     const returnVal = axios({
       method: 'GET',
@@ -34,6 +35,7 @@ class App extends Component {
     return returnVal;
   }
 
+  // deletes a specific feedback entry based on its id number
   deleteFeedbackEntry = (id) => {
     const returnVal = axios({
       method: 'DELETE',
