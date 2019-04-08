@@ -9,16 +9,16 @@ class ViewAdmin extends Component {
       feedbackArray: [],
    }
 
-   refreshAllFeedback = async () => {
-      let feedbackArray = await this.props.getAllFeedback()
-         .catch((error) => {
+   refreshAllFeedback = () => {
+      this.props.getAllFeedback()
+         .then((response) => {
+            this.setState({
+               feedbackArray: response.data,
+            });
+         }).catch((error) => {
             alert('Error retrieving feedback forms, try again later');
             console.log('Error:', error);
          });
-
-      this.setState({
-         feedbackArray: feedbackArray.data,
-      })
    }
 
    componentDidMount = () => {

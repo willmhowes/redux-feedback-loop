@@ -6,6 +6,7 @@ class ViewAdmin extends Component {
       feedbackArray: [],
    }
 
+   // Confirms deletion request
    confirmDelete = () => {
       let result = window.confirm('Are you sure you want to delete this feedback entry?');
       if (result === true) {
@@ -13,6 +14,7 @@ class ViewAdmin extends Component {
       }
    }
 
+   // Sends delete request, renders page upon completion
    deleteItem = () => {
       this.props.deleteFeedbackEntry(this.props.item.id)
       .then(() => {
