@@ -42,7 +42,9 @@ class ViewAdmin extends Component {
                </thead>
                <tbody>
                   {this.state.feedbackArray.map(item =>
-                     <ViewAdminTableRow key={item.id} item={item} />
+                     <ViewAdminTableRow key={item.id}
+                        item={item} refreshAllFeedback={this.refreshAllFeedback}
+                        deleteFeedbackEntry={this.props.deleteFeedbackEntry} />
                   )}
                </tbody>
             </table>

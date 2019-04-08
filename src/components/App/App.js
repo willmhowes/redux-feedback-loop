@@ -27,12 +27,22 @@ class App extends Component {
 
   getAllFeedback = () => {
     const returnVal = axios({
-      type: 'GET',
+      method: 'GET',
       url: '/admin',
     });
 
     return returnVal;
   }
+
+  deleteFeedbackEntry = (id) => {
+    const returnVal = axios({
+      method: 'DELETE',
+      url: `/admin/delete/${id}`,
+    });
+
+    return returnVal;
+  }
+
 
   render() {
     return (
@@ -56,7 +66,8 @@ class App extends Component {
           <Route
             exact path="/admin"
             render={(props) => <ViewAdmin {...props}
-              getAllFeedback={this.getAllFeedback} />}
+              getAllFeedback={this.getAllFeedback}
+              deleteFeedbackEntry={this.deleteFeedbackEntry} />}
           />
         </div>
       </Router>
